@@ -1,0 +1,29 @@
+
+apply plugin:'maven-publish'
+
+afterEvaluate {
+    publishing {
+        publications {
+            debug(MavenPublication) {
+                // Applies the component for the debug build variant.
+                from components.debug
+                groupId = 'com.zhuoqi'
+                artifactId = 'simpleguide'
+                version = '1.0.1'
+            }
+        }
+        publishing {
+            repositories {
+                maven {
+                    // change to point to your repo, e.g. http://my.org/repo
+                    url = "file:///D:\\github"
+                }
+            }
+        }
+    }
+
+
+
+
+}
+
